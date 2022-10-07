@@ -1,8 +1,7 @@
 import discord, dotenv, os
 dotenv.load_dotenv()
 
-intents = discord.Intents(8);
-client = discord.Client(intents=intents)
+client = discord.Client(intents=discord.Intents(274945084480))
 
 @client.event
 async def on_ready():
@@ -13,7 +12,8 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    message.channel.send("ping")
+    print("received", message)
+    await message.channel.send("ping")
 
 client.run(os.environ.get("TOKEN"))
 
