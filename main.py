@@ -9,8 +9,6 @@ client = discord.Client(intents=discord.Intents(
     message_content=True
 ))
 
-
-
 @client.event
 async def on_ready():
     print(f"bot ready {client}")
@@ -25,6 +23,5 @@ async def on_message(message):
             await message.channel.send(POSITIVE_RESPONSES[randint(0, len(POSITIVE_RESPONSES))])
             break;
     
-
 client.run(os.environ.get("TOKEN"))
 
